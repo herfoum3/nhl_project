@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Ingénierie des caractéristiques II | LightSpeed</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Ingénierie des caractéristiques II" />
+<meta name="author" content="Kevin Chelfi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Section 4" />
+<meta property="og:description" content="Section 4" />
+<link rel="canonical" href="http://localhost:4000/milestone2/2023/11/15/section4.html" />
+<meta property="og:url" content="http://localhost:4000/milestone2/2023/11/15/section4.html" />
+<meta property="og:site_name" content="LightSpeed" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-11-15T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Ingénierie des caractéristiques II" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kevin Chelfi"},"dateModified":"2023-11-15T00:00:00-05:00","datePublished":"2023-11-15T00:00:00-05:00","description":"Section 4","headline":"Ingénierie des caractéristiques II","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/milestone2/2023/11/15/section4.html"},"url":"http://localhost:4000/milestone2/2023/11/15/section4.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<meta name="keywords" content="" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/prism.css" />
+<script src="/assets/js/prism.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="wrapper-header">
+            <div class="header">
+    <br>
+    <h5><i>Sports analytics project on NHL data</i></h5>
+    <br>
+    <nav>
+    
+    <a href="/posts">Posts</a>
+    
+    <a href="/categories/">Categories</a>
+    
+    <a href="/">About & Contact</a>
+    
+</nav>
+    <hr>
+</div>
+
+        </header>
+
+        <main class="wrapper-main">
+            <div class="main-content">
+            <div class="post-info">
+    <h2>Ingénierie des caractéristiques II</h2>
+    <p>15 Nov 2023 - Kevin Chelfi</p>
+</div>
+
+<div class="post-content">
+<h1 id="section-4">Section 4</h1>
+
+<p>Voici les la liste et description des caracteristiques considerees dans cette section et le <a href="https://www.comet.com/kevinchelfi/milestone-2/325b4556961d4a35855406ff5f565289">lien vers l’experience commet</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+    <tr>
+      <th>Colonne</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PERIOD_TIME</td>
+      <td>Temps en secondes depuis le debut de la periode</td>
+    </tr>
+    <tr>
+      <td>LAST_ELAPSED_TIME</td>
+      <td>Temps en secondes depuis le debut de la periode de l’evenement precedent</td>
+    </tr>
+    <tr>
+      <td>PERIOD</td>
+      <td>le numero de la perdiode</td>
+    </tr>
+    <tr>
+      <td>‘COORD_X’</td>
+      <td>coordonnees X en pieds du milieu de la patinoire, positive a droite</td>
+    </tr>
+    <tr>
+      <td>‘COORD_Y’</td>
+      <td>coordonnees Y en pieds du milieu de la patinoire, positive vers le haut</td>
+    </tr>
+    <tr>
+      <td>‘LAST_COORD_X’</td>
+      <td>coordonnees X de l’evenement precedent</td>
+    </tr>
+    <tr>
+      <td>‘LAST_COORD_Y’</td>
+      <td>coordonnees Y de l’evenement precedent</td>
+    </tr>
+    <tr>
+      <td>‘DISTANCE’</td>
+      <td>distance au filt d’un tir donné</td>
+    </tr>
+    <tr>
+      <td>‘LAST_DISTANCE’</td>
+      <td>distance au filt d’un tir donné de l’evenement precedent</td>
+    </tr>
+    <tr>
+      <td>‘ANGLE’</td>
+      <td>l’angle du tir qu’il fait avec la verticale au filet, positif vers les Y positifs sinon negatif</td>
+    </tr>
+    <tr>
+      <td>‘SHOT_TYPE’</td>
+      <td>Type de tir, exemple wrist, snap etc…</td>
+    </tr>
+    <tr>
+      <td>‘LAST_EVENT_ID’</td>
+      <td>l’identifiant de l’evenement precedent exemple  GOAL ou SHOT (nouveau api 505 et 506 respectivement</td>
+    </tr>
+    <tr>
+      <td>‘IS_EMPTY_NET’</td>
+      <td>booleen indiquant si le fillet est vide</td>
+    </tr>
+    <tr>
+      <td>‘IS_GOAL’</td>
+      <td>booleen indiquant si c’est un but</td>
+    </tr>
+    <tr>
+      <td>‘REBOND’</td>
+      <td>booleem indiquant si c’est l’evenement precedent etait un tir</td>
+    </tr>
+    <tr>
+      <td>‘CHANGE_ANGLE’</td>
+      <td>la quantite de changement entre l’evenement actuel et precedent, dans cet ordre en tenant compte des signes des angles en faisant la difference: actuel - precedent</td>
+    </tr>
+    <tr>
+      <td>‘SPEED’</td>
+      <td>“vitesse” de changement de position entre l’evenement precedent et actuel</td>
+    </tr>
+    <tr>
+      <td>‘SPEED_ANGLE’</td>
+      <td>“vitesse” de changement d’angle entre l’evenement precedent et actuel</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="wrapper-footer">
+        <div class="footer">
+    <span class="footer-text float-left">This work is licensed under <a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GPLv3</a></span>
+    <span class="footer-text float-right">
+    Site Updated: 2023-11-15 ET
+  </span>
+</div>
+    </footer>
+</body>
+</html>

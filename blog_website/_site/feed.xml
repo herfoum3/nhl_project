@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-15T23:21:49-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">LightSpeed</title><subtitle>A simple Jekyll theme</subtitle><author><name>tajacks</name></author><entry><title type="html">Ingénierie des caractéristiques I</title><link href="http://localhost:4000/milestone2/2023/11/15/section2.html" rel="alternate" type="text/html" title="Ingénierie des caractéristiques I" /><published>2023-11-15T00:00:00-05:00</published><updated>2023-11-15T00:00:00-05:00</updated><id>http://localhost:4000/milestone2/2023/11/15/section2</id><content type="html" xml:base="http://localhost:4000/milestone2/2023/11/15/section2.html"><![CDATA[<h1 id="section-2">Section 2</h1>
+
+<p>Dans l’histogramme suivant, on remarque que plus on est proche du filet plus il y’a tirs dont un petit pourcentage se transforme en buts et cela décroit jusqu’à 0 au dela de 75 pieds environs (ceci est intuivement vrai)
+<br />
+<img src="/milestone2/image/sect2_hist_dist.png" alt="Histogramme du nombre de tirs par distance" />
+<br />
+Similairement pour l’histogramme des tirs selon les angles, il y’a plus de tirs qu’on l’angle est proche de 0 c’est dans la ligne perpendicualire au buts. Cela diminue plus on va sur les côtés. les buts suivent le même pattern. On remarque aussi une symètrie par rapport à 0. Les deux côtés gauche et droit ont les mêmes statistiques
+<br />
+<img src="/milestone2/image/sect2_hist_angle.png" alt="Histogramme du nombre de tirs par angle" />
+<br />
+L’histogramme 2D presente une grange  symètrie par rapport à la ligne 0 (perpendiculaire aux buts) et qu’une majorite de buts sont realises directement dans la vicinite du filet ainsi que dans les zones autour des points (60,25) et (60,-25)
+<br />
+<img src="/milestone2/image/sect2_hist2d_dist_angle.png" alt="Histogramme 2D distance vs angle" />
+<br />
+<img src="/milestone2/image/sect2_taux_buts_distance.png" alt="Histogramme 2D distance vs angle" />
+<br />
+<img src="/milestone2/image/sect2_taux_buts_angle.png" alt="Histogramme 2D distance vs angle" /></p>
+
+<p>\</p>
+<h1 id="buts-improbables">Buts improbables</h1>
+<p><br />
+Les données montrent qu’il y’a 95 buts réalisés à partir des zones défensives. Ceci est probablement du à des coordonnees errorées lors de la saisie par la LNH. un exemple est dans la partie 2019020288 (FLA-WPG) avec les corrdonnees (-73,8) avec une distance de 162 au filet adverse. Je n’ai pas pu visualise les videos,  je recois un message d’erreur comme quoi elles ne sont pas supporte. Cependant il serait invraisemblable de marque ce but à cette distance avec un filet non-vide.</p>]]></content><author><name>Kevin Chelfi</name></author><category term="milestone2" /><summary type="html"><![CDATA[Section 2]]></summary></entry><entry><title type="html">Modèles de base</title><link href="http://localhost:4000/milestone2/2023/11/15/section3.html" rel="alternate" type="text/html" title="Modèles de base" /><published>2023-11-15T00:00:00-05:00</published><updated>2023-11-15T00:00:00-05:00</updated><id>http://localhost:4000/milestone2/2023/11/15/section3</id><content type="html" xml:base="http://localhost:4000/milestone2/2023/11/15/section3.html"><![CDATA[<h1 id="section-3">Section 3</h1>
+<p><br />
+Question 1
+<br />
+La precision (accuracy) est de 0.90. Cependant la precision (la mesure du taux de vraies positives sur le total des positives) de la classe 1 (buts) est égale à 0 donc c’est seulement les non buts qui sont correctement prédit. Cela indique des classes qui sont fortement en déséquilibre. Ce qui est le cas car on a beaucoup plus de tirs non buts que de buts.</p>
+
+<p>Voici le rapport rendu par classification_report.</p>
+
+<pre><code class="language-`{verbatim}">              precision    recall  f1-score   support
+
+           0       0.91      1.00      0.95     45632
+           1       0.00      0.00      0.00      4744
+
+    accuracy                           0.91     50376
+   macro avg       0.45      0.50      0.48     50376
+weighted avg       0.82      0.91      0.86     50376
+</code></pre>
+
+<p><br />
+Question 3
+<br />
+La courbe ROC nous donne un AUC de 0.7 ce qui moyennement bon, on le veut plus proche de 1.</p>
+
+<p><a href="https://www.comet.com/kevinchelfi/milestone-2/b34f341110f94a6193d98b2834856157">Liens vers l’experience avec Distance</a>
+<br />
+<img src="/milestone2/image/sect3_roc_distance_LR.png" alt="Courbe ROC par distance du modele LogisticRegression" />
+<br />
+<img src="/milestone2/image/sect3_taux_buts_distance_LR.png" alt="Taux de buts par distance du modele LogisticRegression" />
+<br />
+<img src="/milestone2/image/sect3_proportion_distance_LR.png" alt="Proportion de buts par distance du modele LogisticRegression" />
+<br />
+<img src="/milestone2/image/sect3_fiabilite_distance_LR.png" alt="Diagramme de fiabilite du modele LogisticRegression" /></p>
+
+<p>\</p>
+
+<p><a href="https://www.comet.com/kevinchelfi/milestone-2/22fe02d0642f435aab5c22ca00201bb7">Liens vers l’experience avec Angle</a>
+<br />
+<img src="/milestone2/image/sect3_roc_angle_LR.png" alt="Courbe ROC par distance du modele LogisticRegression" />
+<br />
+<img src="/milestone2/image/sect3_taux_angle_LR.png" alt="Taux de buts par distance du modele LogisticRegression" />
+<br />
+<img src="/milestone2/image/sect3_proportion_angle_LR.png" alt="Proportion de buts par distance du modele LogisticRegression" />
+<br />
+<img src="/milestone2/image/sect3_fiabilite_angle_LR.png" alt="Diagramme de fiabilite du modele LogisticRegression" /></p>
+
+<p>\</p>
+
+<p><a href="https://www.comet.com/kevinchelfi/milestone-2/85a206214a8345938c2f63c7f0c4e36c">Liens vers l’experience avec Angle and Distance</a>
+<br />
+<img src="/milestone2/image/sect3_roc_angle_distance_LR.png" alt="Courbe ROC par distance du modele LogisticRegression" />
+<br />
+<img src="/milestone2/image/sect3_taux_angle_distance_LR.png" alt="Taux de buts par distance du modele LogisticRegression" />
+<br />
+<img src="/milestone2/image/sect3_prop_angle_distance_LR.png" alt="Proportion de buts par distance du modele LogisticRegression" />
+<br />
+<img src="/milestone2/image/sect3_fiabilite_angle_distance_LR.png" alt="Diagramme de fiabilite du modele LogisticRegression" /></p>]]></content><author><name>Kevin Chelfi</name></author><category term="milestone2" /><summary type="html"><![CDATA[Section 3 Question 1 La precision (accuracy) est de 0.90. Cependant la precision (la mesure du taux de vraies positives sur le total des positives) de la classe 1 (buts) est égale à 0 donc c’est seulement les non buts qui sont correctement prédit. Cela indique des classes qui sont fortement en déséquilibre. Ce qui est le cas car on a beaucoup plus de tirs non buts que de buts.]]></summary></entry><entry><title type="html">Ingénierie des caractéristiques II</title><link href="http://localhost:4000/milestone2/2023/11/15/section4.html" rel="alternate" type="text/html" title="Ingénierie des caractéristiques II" /><published>2023-11-15T00:00:00-05:00</published><updated>2023-11-15T00:00:00-05:00</updated><id>http://localhost:4000/milestone2/2023/11/15/section4</id><content type="html" xml:base="http://localhost:4000/milestone2/2023/11/15/section4.html"><![CDATA[<h1 id="section-4">Section 4</h1>
+
+<p>Voici les la liste et description des caracteristiques considerees dans cette section et le <a href="https://www.comet.com/kevinchelfi/milestone-2/325b4556961d4a35855406ff5f565289">lien vers l’experience commet</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+    <tr>
+      <th>Colonne</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PERIOD_TIME</td>
+      <td>Temps en secondes depuis le debut de la periode</td>
+    </tr>
+    <tr>
+      <td>LAST_ELAPSED_TIME</td>
+      <td>Temps en secondes depuis le debut de la periode de l’evenement precedent</td>
+    </tr>
+    <tr>
+      <td>PERIOD</td>
+      <td>le numero de la perdiode</td>
+    </tr>
+    <tr>
+      <td>‘COORD_X’</td>
+      <td>coordonnees X en pieds du milieu de la patinoire, positive a droite</td>
+    </tr>
+    <tr>
+      <td>‘COORD_Y’</td>
+      <td>coordonnees Y en pieds du milieu de la patinoire, positive vers le haut</td>
+    </tr>
+    <tr>
+      <td>‘LAST_COORD_X’</td>
+      <td>coordonnees X de l’evenement precedent</td>
+    </tr>
+    <tr>
+      <td>‘LAST_COORD_Y’</td>
+      <td>coordonnees Y de l’evenement precedent</td>
+    </tr>
+    <tr>
+      <td>‘DISTANCE’</td>
+      <td>distance au filt d’un tir donné</td>
+    </tr>
+    <tr>
+      <td>‘LAST_DISTANCE’</td>
+      <td>distance au filt d’un tir donné de l’evenement precedent</td>
+    </tr>
+    <tr>
+      <td>‘ANGLE’</td>
+      <td>l’angle du tir qu’il fait avec la verticale au filet, positif vers les Y positifs sinon negatif</td>
+    </tr>
+    <tr>
+      <td>‘SHOT_TYPE’</td>
+      <td>Type de tir, exemple wrist, snap etc…</td>
+    </tr>
+    <tr>
+      <td>‘LAST_EVENT_ID’</td>
+      <td>l’identifiant de l’evenement precedent exemple  GOAL ou SHOT (nouveau api 505 et 506 respectivement</td>
+    </tr>
+    <tr>
+      <td>‘IS_EMPTY_NET’</td>
+      <td>booleen indiquant si le fillet est vide</td>
+    </tr>
+    <tr>
+      <td>‘IS_GOAL’</td>
+      <td>booleen indiquant si c’est un but</td>
+    </tr>
+    <tr>
+      <td>‘REBOND’</td>
+      <td>booleem indiquant si c’est l’evenement precedent etait un tir</td>
+    </tr>
+    <tr>
+      <td>‘CHANGE_ANGLE’</td>
+      <td>la quantite de changement entre l’evenement actuel et precedent, dans cet ordre en tenant compte des signes des angles en faisant la difference: actuel - precedent</td>
+    </tr>
+    <tr>
+      <td>‘SPEED’</td>
+      <td>“vitesse” de changement de position entre l’evenement precedent et actuel</td>
+    </tr>
+    <tr>
+      <td>‘SPEED_ANGLE’</td>
+      <td>“vitesse” de changement d’angle entre l’evenement precedent et actuel</td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name>Kevin Chelfi</name></author><category term="milestone2" /><summary type="html"><![CDATA[Section 4]]></summary></entry><entry><title type="html">Modèles avancés</title><link href="http://localhost:4000/milestone2/2023/11/15/section5.html" rel="alternate" type="text/html" title="Modèles avancés" /><published>2023-11-15T00:00:00-05:00</published><updated>2023-11-15T00:00:00-05:00</updated><id>http://localhost:4000/milestone2/2023/11/15/section5</id><content type="html" xml:base="http://localhost:4000/milestone2/2023/11/15/section5.html"><![CDATA[<h1 id="section-5">Section 5</h1>
+
+<p>Question 1</p>
+
+<p><a href="https://www.comet.com/kevinchelfi/milestone-2/4fe33641122c4056b95c2986abc4ab23">Lien vers l’experience commet</a></p>
+
+<p>Ces courbes semblent sensiblement similaires a celle qu’on a obtenu avec la LogisticRegression. Mais il faut qu’on a pas encore proceder a des reglages des hyperparmetre de XGBoost.</p>
+
+<p><br />
+<img src="/milestone2/image/sect5_roc_distance_XGB.png" alt="Courbe ROC par distance du modele XGBoost" />
+<br />
+<img src="/milestone2/image/sect5_taux_distance_XGB.png" alt="Taux de buts par distance du modele XGBoost" />
+<br />
+<img src="/milestone2/image/sect5_prop_distance_XGB.png" alt="Proportion de buts par distance du model XGBoost" />
+<br />
+<img src="/milestone2/image/sect5_fiabilite_distance_XGB.png" alt="Diagramme de fiabilite par distance du modele XGBoost" />
+<br />
+<br />
+Par contre celle des angles semble mellieure avec un AUC de 0.59 au lieu de 0.50.</p>
+
+<p><a href="https://www.comet.com/kevinchelfi/milestone-2/86246939b0994c3bb87bf457a8ed8012">Lien vers l’experience commet</a></p>
+
+<p><img src="/milestone2/image/sect5_ron_angle_XGB.png" alt="Courbe ROC par angle du modele XGBoost" />
+<br />
+<img src="/milestone2/image/sect5_taux_angle_XGB.png" alt="Taux de buts par angle du modele XGBoost" />
+<br />
+<img src="/milestone2/image/sect5_prop_angle_XGB.png" alt="Proportion de buts par angle du model XGBoost" />
+<br />
+<img src="/milestone2/image/sect5_fiabilite_angle_XGB.png" alt="Diagramme de fiabilite par angle du modele XGBoost" />
+<br />
+Question 2
+<br />
+J’ai choisi d’optimiser les parametres suivant: 
+\</p>
+<pre><code class="language-{verbatim}">param_grid = {
+    'max_depth': [3, 5, 7],
+    'learning_rate': [0.01, 0.1, 0.2, 0.4],
+    'n_estimators': [100, 200, 500],
+    'subsample': [0.7, 0.8, 1]
+}
+</code></pre>
+<p><br />
+Qui donne 540 entrainements. Apres la validation croisée la precision est toujours de 0.90. 
+Les parametres optimaux sont:</p>
+<pre><code class="language-{verbatim}">  learning_rate: 0.1
+  max_depth: 7
+  n_estimators: 100
+  subsample: 0.8
+</code></pre>
+<p><br />
+<img src="/milestone2/image/sect5_crossval.png" alt="Evolution de la precision en fonction du nombre d'estimateur" />
+<br />
+<a href="https://www.comet.com/kevinchelfi/milestone-2/a73fd7b6f90c41d2916dd583b29f3e26">Lien vers l’experience commet de XGBoost</a></p>]]></content><author><name>Kevin Chelfi</name></author><category term="milestone2" /><summary type="html"><![CDATA[Section 5]]></summary></entry><entry><title type="html">Faites de votre mieux!</title><link href="http://localhost:4000/milestone2/2023/11/15/section6.html" rel="alternate" type="text/html" title="Faites de votre mieux!" /><published>2023-11-15T00:00:00-05:00</published><updated>2023-11-15T00:00:00-05:00</updated><id>http://localhost:4000/milestone2/2023/11/15/section6</id><content type="html" xml:base="http://localhost:4000/milestone2/2023/11/15/section6.html"><![CDATA[<h1 id="section-6">Section 6</h1>
+
+<p>Nous avons entraine un model RandomForest avec les caracteristiques developees en section 4. On a obtenu le rapport suivant:</p>
+
+<pre><code class="language-{verbatim}">The accuracy of our model is: 0.906983400114482
+              precision    recall  f1-score   support
+
+           0       0.91      1.00      0.95      9464
+           1       0.73      0.07      0.12      1018
+
+    accuracy                           0.91     10482
+   macro avg       0.82      0.53      0.54     10482
+weighted avg       0.89      0.91      0.87     10482
+
+</code></pre>
+
+<p>ici nous constantons que l’accuracy est toujours de 0.90 par contre maintenant la precision de la classe des buts n’est plus  0. Elle est de 0.73 qui est tres net amelioration</p>]]></content><author><name>Kevin Chelfi</name></author><category term="milestone2" /><summary type="html"><![CDATA[Section 6]]></summary></entry><entry><title type="html">Évaluer sur l’ensemble de test</title><link href="http://localhost:4000/milestone2/2023/11/15/section7.html" rel="alternate" type="text/html" title="Évaluer sur l’ensemble de test" /><published>2023-11-15T00:00:00-05:00</published><updated>2023-11-15T00:00:00-05:00</updated><id>http://localhost:4000/milestone2/2023/11/15/section7</id><content type="html" xml:base="http://localhost:4000/milestone2/2023/11/15/section7.html"><![CDATA[<h1 id="section-7">Section 7</h1>
+
+<p>Nous avons utilise le model RandomForest avec les caracteristiques developees en section 4 sur l’ensemble de test. On a obtenu le rapport suivant:</p>
+
+<pre><code class="language-{verbatim}">The accuracy of our model is: 0.906983400114482
+              precision    recall  f1-score   support
+
+           0       0.91      1.00      0.95      9464
+           1       0.73      0.07      0.12      1018
+
+    accuracy                           0.91     10482
+   macro avg       0.82      0.53      0.54     10482
+weighted avg       0.89      0.91      0.87     10482
+
+</code></pre>]]></content><author><name>Kevin Chelfi</name></author><category term="milestone2" /><summary type="html"><![CDATA[Section 7]]></summary></entry></feed>

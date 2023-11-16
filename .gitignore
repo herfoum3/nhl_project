@@ -4,6 +4,10 @@
 /pyvenv.cfg
 /raw
 /share
+/__pycache__
 .ipynb_checkpoints/
 /*.zip
 projet.py.bkp
+/.idea
+2017021065.json
+/images

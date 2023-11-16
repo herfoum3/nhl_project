@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Ingénierie des caractéristiques I | LightSpeed</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Ingénierie des caractéristiques I" />
+<meta name="author" content="Kevin Chelfi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Section 2" />
+<meta property="og:description" content="Section 2" />
+<link rel="canonical" href="http://localhost:4000/milestone2/2023/11/15/section2.html" />
+<meta property="og:url" content="http://localhost:4000/milestone2/2023/11/15/section2.html" />
+<meta property="og:site_name" content="LightSpeed" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-11-15T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Ingénierie des caractéristiques I" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kevin Chelfi"},"dateModified":"2023-11-15T00:00:00-05:00","datePublished":"2023-11-15T00:00:00-05:00","description":"Section 2","headline":"Ingénierie des caractéristiques I","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/milestone2/2023/11/15/section2.html"},"url":"http://localhost:4000/milestone2/2023/11/15/section2.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<meta name="keywords" content="" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/prism.css" />
+<script src="/assets/js/prism.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="wrapper-header">
+            <div class="header">
+    <br>
+    <h5><i>Sports analytics project on NHL data</i></h5>
+    <br>
+    <nav>
+    
+    <a href="/posts">Posts</a>
+    
+    <a href="/categories/">Categories</a>
+    
+    <a href="/">About & Contact</a>
+    
+</nav>
+    <hr>
+</div>
+
+        </header>
+
+        <main class="wrapper-main">
+            <div class="main-content">
+            <div class="post-info">
+    <h2>Ingénierie des caractéristiques I</h2>
+    <p>15 Nov 2023 - Kevin Chelfi</p>
+</div>
+
+<div class="post-content">
+<h1 id="section-2">Section 2</h1>
+
+<p>Dans l’histogramme suivant, on remarque que plus on est proche du filet plus il y’a tirs dont un petit pourcentage se transforme en buts et cela décroit jusqu’à 0 au dela de 75 pieds environs (ceci est intuivement vrai)
+<br />
+<img src="/milestone2/image/sect2_hist_dist.png" alt="Histogramme du nombre de tirs par distance" />
+<br />
+Similairement pour l’histogramme des tirs selon les angles, il y’a plus de tirs qu’on l’angle est proche de 0 c’est dans la ligne perpendicualire au buts. Cela diminue plus on va sur les côtés. les buts suivent le même pattern. On remarque aussi une symètrie par rapport à 0. Les deux côtés gauche et droit ont les mêmes statistiques
+<br />
+<img src="/milestone2/image/sect2_hist_angle.png" alt="Histogramme du nombre de tirs par angle" />
+<br />
+L’histogramme 2D presente une grange  symètrie par rapport à la ligne 0 (perpendiculaire aux buts) et qu’une majorite de buts sont realises directement dans la vicinite du filet ainsi que dans les zones autour des points (60,25) et (60,-25)
+<br />
+<img src="/milestone2/image/sect2_hist2d_dist_angle.png" alt="Histogramme 2D distance vs angle" />
+<br />
+<img src="/milestone2/image/sect2_taux_buts_distance.png" alt="Histogramme 2D distance vs angle" />
+<br />
+<img src="/milestone2/image/sect2_taux_buts_angle.png" alt="Histogramme 2D distance vs angle" /></p>
+
+<p>\</p>
+<h1 id="buts-improbables">Buts improbables</h1>
+<p><br />
+Les données montrent qu’il y’a 95 buts réalisés à partir des zones défensives. Ceci est probablement du à des coordonnees errorées lors de la saisie par la LNH. un exemple est dans la partie 2019020288 (FLA-WPG) avec les corrdonnees (-73,8) avec une distance de 162 au filet adverse. Je n’ai pas pu visualise les videos,  je recois un message d’erreur comme quoi elles ne sont pas supporte. Cependant il serait invraisemblable de marque ce but à cette distance avec un filet non-vide.</p>
+
+</div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="wrapper-footer">
+        <div class="footer">
+    <span class="footer-text float-left">This work is licensed under <a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GPLv3</a></span>
+    <span class="footer-text float-right">
+    Site Updated: 2023-11-15 ET
+  </span>
+</div>
+    </footer>
+</body>
+</html>

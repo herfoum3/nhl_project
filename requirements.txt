@@ -5,3 +5,7 @@ jupyterlab
 matplotlib
 seaborn
 tqdm
+scikit-learn
+comet_ml
+eli5
+
