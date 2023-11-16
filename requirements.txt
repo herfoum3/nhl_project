@@ -8,4 +8,5 @@ tqdm
 scikit-learn
 comet_ml
 eli5
+xgboost
 
