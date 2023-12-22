@@ -155,6 +155,7 @@ def parse_data_v2(game_json):
         if goalie_id:
             play['NAME_KEEPER'] = players_by_id[goalie_id]
 
+
         play['NAME_SHOOTER'] =  players_by_id[scorer_id] if scorer_id else players_by_id[shooter_id]
 
         play['IS_GOAL'] = eventTypeId == 505
@@ -296,6 +297,7 @@ def parse_data(game_json):
 
         previous_event = p
 
+
     for play in tempplays:
         play["NUMBER_SHOTS"] = shots
         play["NUMBER_GOALS"] = goals
@@ -311,6 +313,6 @@ def organiser(path: str, start: int, stop: int, seasonType: tuple = [2]):
         with open(path + '/' + e, 'r') as game_file:
             game_json = json.load(game_file)
         plays += parse_data(game_json)
-        #break
+        break
     df = pd.DataFrame(plays)
     return df
